@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block main%}
+<h1>Home page</h1>
+<h2>posts list :</h2>
+<ol>
+    {% for post in object_list %}
+    
+    <h3>
+        <a href="{% url 'details' post.pk %}"> Post : {{post.title}}</a>
+    </h3>
+    <li>
+        <a href="{% url 'edit' post.pk %}">Update</a>
+    </li>
+    <li>
+        <a href="{% url 'delete' post.pk %}">Delete</a>
+    </li>
+    {% endfor%}
+</ol>
+<h2><a href="{% url 'add'  %}">Create your  post</a></h2>
+{% endblock main%}

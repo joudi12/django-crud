@@ -1,0 +1,19 @@
+  
+{% extends 'base.html' %}
+
+{% block main%}
+<h1>Details page</h1>
+<h3> The Title:  {{share.title }}</h3>
+<h3> The Author : {{share.author }}</h3>
+<h3> Post : {{share.body }}</h3>
+
+<ol>
+    <li>
+        <a href="{% url 'edit' share.pk %}">Update</a>
+    </li>
+    <li>
+        <a href="{% url 'delete' share.pk %}">Delete</a>
+    </li>
+</ol>
+
+{% endblock main%}
